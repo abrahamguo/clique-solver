@@ -1,3 +1,4 @@
+package npc;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -10,7 +11,7 @@ class solveClique {
 		System.out.println("* Max Cliques in graphs in " + filename);
 		System.out.println("\t(|V|,|E|) Cliques (size, ms used)");
 		//for (Graph graph: graphs) {
-			Graph graph = graphs.get(2);
+			Graph graph = graphs.get(3);
 			long start = System.currentTimeMillis();
 			Set<Integer> maxClique = graph.findLargestClique();
 			System.out.println(

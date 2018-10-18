@@ -1,3 +1,4 @@
+package npc;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -37,9 +38,6 @@ class Graph {
 		}
 		return graphs;
 	}
-	
-	
-	
 	
 	
 	/***** 2. PUBLIC API *****/
@@ -195,6 +193,17 @@ class Graph {
 		matrix.remove(vertex);
 		for (List<Boolean> row: matrix) row.remove(vertex);
 		--numVertices;
+		return this;
+	}
+	
+	public Graph invertGraph(){
+		for(int i=0;i<numVertices;i++){
+			for(int j=0;j<numVertices;j++){
+				if(i != j){ //don't make a vertex connected to itself
+					this.matrix.get(i).set(j, !areConnected(i, j));
+				}
+			}
+		}
 		return this;
 	}
 	
